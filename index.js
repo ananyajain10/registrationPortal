@@ -18,8 +18,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
 // mongoose
 mongoose
-    .connect(url,
-        { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(url)
     .then(() => console.log("db connected"))
     .catch((e) => console.log(e));
 
