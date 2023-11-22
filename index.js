@@ -20,10 +20,12 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 mongoose
     .connect(url,
         { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => app.listen(port, () => console.log("listening")))
+    .then(() => console.log("db connected"))
     .catch((e) => console.log(e));
 
 
 
 app.use('/auth', authRoute);
 app.use('/userRegister', registrationRoute);
+
+app.listen(port, () => console.log("listening"))
